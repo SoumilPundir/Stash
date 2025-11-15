@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { seedTransactions } from "@/actions/seed";
 
 export async function GET() {

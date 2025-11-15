@@ -12,7 +12,7 @@ const aj = arcjet({
   key: process.env.ARCJET_KEY,
   // characteristics: ["userId"], // Track based on Clerk userId
   rules: [
-    // Shield protection for content and security
+    // Shields protection for content and security
     shield({
       mode: "LIVE",
     }),
@@ -21,7 +21,6 @@ const aj = arcjet({
       allow: [
         "CATEGORY:SEARCH_ENGINE", // Google, Bing, etc
         "GO_HTTP", // For Inngest
-        // See the full list at https://arcjet.com/bot-list
       ],
     }),
   ],

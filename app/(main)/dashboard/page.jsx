@@ -9,12 +9,14 @@ import BudgetProgress from "./_components/budget-progress";
 import DashboardOverview from "./_components/transaction-overview";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { syncUser } from "@/actions/syncUser";
 
 
 const DashboardPage = async () => {
+    await syncUser(); 
     const { userId } = await auth();
 
-  // 🔥 if user is not logged in → force sign-in page
+  //  if user is not logged in → force sign-in page
   if (!userId) {
     return redirect("/sign-in?redirect_url=/dashboard");
   }

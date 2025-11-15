@@ -4,8 +4,11 @@ import { TransactionTable } from "../_components/transaction-table";
 import { BarLoader } from "react-spinners";
 import { Suspense } from "react";
 import AccountChart from "../_components/account-chart";
+import { syncUser } from "@/actions/syncUser";
 
 export default async function AccountPage({ params }) {
+  await syncUser();
+
   const accountData = await getAccountWithTransactions(params.id);
 
   if (!accountData) {

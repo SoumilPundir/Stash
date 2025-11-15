@@ -3,8 +3,11 @@ import React from "react";
 import AddTransactionForm from "../_components/transaction-form";
 import { defaultCategories } from "@/data/categories";
 import { getTransaction } from "@/actions/transaction";
+import { syncUser } from "@/actions/syncUser";
+
 
 const AddTransactionPage = async ({ searchParams }) => {
+  await syncUser();
 
   const resolvedSearchParams = await searchParams;
   const editId = resolvedSearchParams?.edit;
