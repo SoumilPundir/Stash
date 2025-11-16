@@ -70,7 +70,7 @@ export default function Home() {
               <Card key={index} className="p-6">
                 <CardContent className="pt-4">
                   <div className="flex items-center mb-4">
-                    <Image
+                    <img
                       src={testimonial.image}
                       alt={testimonial.name}
                       width={40}
